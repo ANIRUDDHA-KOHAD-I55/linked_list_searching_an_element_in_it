@@ -1,0 +1,42 @@
+#include<stdio.h>
+struct node{//2021BIT055
+    int data;
+    struct node *next;
+};
+void func(struct node *p,int a){
+    while(p!=NULL){
+        if(p->data==a){
+          printf("Element found, %d\n",p->data);
+          break;
+        }
+        else{
+            printf("--Not found!--\n");
+            p=p->next;
+        }
+    }
+}//2021BIT055
+int main(){
+    int a;
+    struct node *head;
+    struct node *one=NULL;
+    struct node *two=NULL;
+    struct node *three=NULL;
+    
+    one=malloc(sizeof(struct node));
+    two=malloc(sizeof(struct node));
+    three=malloc(sizeof(struct node));
+    
+    one->data=10;
+    two->data=20;
+    three->data=30;
+    
+    one->next=two;
+    two->next=three;
+    three->next=NULL;
+    head=one;//2021BIT055
+   
+    printf("Enter the element to be found in linked list : ");
+    scanf("%d",&a);
+    func(head,a);
+    
+}//2021BIT055
